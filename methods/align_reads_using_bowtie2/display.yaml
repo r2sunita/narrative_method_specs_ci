@@ -1,0 +1,117 @@
+#
+# Define basic display information
+#
+name     : Align Reads using Bowtie2
+tooltip  : |
+    This method allows aligning sequencing reads to long reference sequences using Bowtie2.
+
+screenshots :
+    []
+
+#
+# Define the set of other narrative methods that should be suggested to the user.
+#
+method-suggestions :
+    related :
+        []
+    next :
+        []
+
+
+#
+# Configure the display and description of the parameters
+#
+parameters :
+    sample_id :
+        ui-name : |
+            Reads associated with RNASeq sample
+        short-hint : |
+            Select the reads associated with RNASeq sample
+    output_obj_name :
+        ui-name : |
+            Alignment output
+        short-hint : |
+            Provide the name of bowtie2 read alignment output
+    reference :
+        ui-name : |
+            Genome
+        short-hint : |
+            Specify the name of genome
+    bowtie2_index :
+        ui-name : |
+            Indexed genome
+        short-hint : |
+            Select the indexed genome built using bowtie2
+    phred33 :
+        ui-name : |
+            phred33
+        short-hint : |
+            phred+33 used by the latest illumina
+    phred64 :
+        ui-name : |
+            phred64
+        short-hint : |
+            phred+64
+    local :
+        ui-name : |
+            local
+        short-hint : |
+            local soft clipped
+    very-fast :
+        ui-name : |
+            very fast
+        short-hint : |
+            very fast
+    fast :
+        ui-name : |
+            fast
+        short-hint : |
+            fast
+    very-sensitive :
+        ui-name : |
+            very sensitive
+        short-hint : |
+            very sensitive
+    sensitive :
+        ui-name : |
+            sensitive
+        short-hint : |
+            sensitive
+    very-fast-local :
+        ui-name : |
+            very fast local
+        short-hint : |
+            very fast local
+    very-sensitive-local :
+        ui-name : |
+            very sensitive local
+        short-hint : |
+           very sensitive local
+    fast-local :
+        ui-name : |
+            fast local
+        short-hint : |
+           fast local
+    fast-sensitive :
+        ui-name : |
+            fast sensitive
+        short-hint : |
+           fast sensitive
+description : |
+    <p>This method allows to align the sequencing reads to long reference sequences using bowtie2. It takes a bowtie2 index object and sequencing read file and outputs a set of alignments in SAM format.</p> 
+    <p>Bowtie2 supports gapped, local and paired-end alignment modes. By default, Bowtie 2 performs end-to-end read alignment. That is, it searches for alignments involving all of the read characters. This is also called an "untrimmed" or "unclipped" alignment. It also supports a "local" alignment mode, which does not require that reads align end-to-end.This produces alignments that might be "trimmed" (or "soft clipped") at one or both extremes in a way that optimizes alignment score.</p>
+    
+    <p><strong>Team members who developed & deployed algorithm in KBase:</strong>
+    Srividya Ramakrishnan, Sunita Kumari, Shinjae Yoo, Priya Ranjan, Jim Thomason, Fei He, Vivek Kumar</p>
+    
+publications :
+    -
+        display-text: |
+            Langmead B, Trapnell C, Pop M, Salzberg SL (2009) "Ultrafast and memory-efficient alignment of short DNA sequences to the human genome" Genome Biology 10 (3): 10:R25.
+        link: http://www.ncbi.nlm.nih.gov/pmc/articles/PMC2690996/
+        display-text: |
+            Langmead B, Salzberg SL (2012) "Fast gapped-read alignment with Bowtie 2" Nature Methods 9 (4): 357–359.
+        link: http://www.ncbi.nlm.nih.gov/pubmed/22388286
+        display-text: |
+            Karkkainen J (2007) "Fast BWT in small space by blockwise suffix sorting" Theor Comput Sci 2007, 387:249-257.
+        link: http://www.sciencedirect.com/science/article/pii/S0304397507005245
